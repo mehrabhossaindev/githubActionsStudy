@@ -23,4 +23,4 @@ jobs:
               run: |
                 echo "Your name is - ${{steps.step-1.outputs.name}}"
                 echo "Your email is - ${{steps.step-1.outputs.email}}"
-                echo "Your salary is - ${{steps.step-1.outputs.salary}}"
+                echo "Your salary is - ${{steps.step-2.outputs.salary}}"
