@@ -1,0 +1,23 @@
+name: Manual Input
+
+on:
+    workflow_dispatch:
+        inputs:
+            name:
+                description: name
+                required: false
+                default: "Mehrab"
+
+            age:
+                description: age
+                required: false
+                default: "30"
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: "Input access"
+              run: echo "your name is - ${{inputs.name}} and your Age is ${{inputs.age}}"
