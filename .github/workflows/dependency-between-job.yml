@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build your project
-        run: echodd "Build your project"
+        run: echo "Build your project"
 
       - name: Checkout Project
         run: echo "Checkout this project"
@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - test
+      - build
     steps:
       - name: Deploy your Project
         run: echo "Project Deploy"
