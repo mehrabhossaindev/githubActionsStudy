@@ -1,0 +1,30 @@
+name: Build vue application
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Start build Vue Project"
+        run: echo "Start build"
+      - name: Checkout 
+        uses: actions/checkout@v4
+      - name: Setup Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: NPM install
+        run: npm ci
+
+      - name: NPM Run Build
+        run: npm run build
+
+      - name: Upload a Build Artifact
+        with:
+          name: project-artifact
+          path: dist
+     
+        
