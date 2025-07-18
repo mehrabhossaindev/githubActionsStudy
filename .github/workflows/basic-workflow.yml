@@ -1,4 +1,4 @@
-name: Basic Workflow run
+name: Vue project Build
 on:
   workflow_dispatch:
 
@@ -6,12 +6,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Basic command Run
-        run: echo "hello github Action"
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Basic Deployment
-        run: echo "Basic Deployment"
+      - name: Install NPM
+        run: npm ci
+        
+      - name: Npm Run Build
+        run: npm run build
+
+
         
