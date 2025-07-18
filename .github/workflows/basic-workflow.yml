@@ -1,0 +1,17 @@
+name: Basic Workflow run
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Basic command Run
+        run: echo "hello github Action"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Basic Deployment
+        run: echo "Basic Deployment"
+        
